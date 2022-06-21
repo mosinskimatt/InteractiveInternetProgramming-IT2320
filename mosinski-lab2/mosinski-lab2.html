@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Fibonacci Sequence</title>
+   <h2>Matthew Mosinski - IT 2320 - Lab 2 Fibonacci Sequence</h2> 
+   <script type = "text/JavaScript">
+       'use strict'
+       var numFib = parseFloat(prompt("How many numbers in the sequence?")); 
+       document.write("You entered that there are "+ numFib + " numbers in the sequence.");
+       if(numFib<=3)
+       {
+        alert("The sequence must have more than 3 numbers.");
+        document.writeln("<br>Enter a number greater than 3.");
+       }
+       else 
+       {
+          var myFib = new array(numFib); //declare the array
+		  myFib[0] = 0;
+		  myFib[1] = 1;
+		  // fill the array
+		  for (i=2; i <numFib;i++) {
+		     myFib[i]=myFib[i-2]+myFib[i-1];
+		  }
+		  // write out the results
+		  for (i=0; i<n;i++) 
+          {
+		     document.writeln(myFib[i]"<br>");
+		  }
+	   }
+	   // calculate the ratio
+	   var ratio = myFib[numFib-1]/myFib[numFib-2];
+	   document.write("Ratio: " + ratio); 
+	</script>
+</head>  
+</html>
