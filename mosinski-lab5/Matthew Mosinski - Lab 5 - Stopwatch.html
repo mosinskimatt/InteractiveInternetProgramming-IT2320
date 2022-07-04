@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mosinski - Lab 5 - Stopwatch</title>
+        
+        <style type="text/css">
+            body
+            {
+                max-width: 500px;
+                margin: auto;
+                background-color: white;
+                padding: 10px;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Matthew Mosinski - Lab 5 - Stopwatch</h2>
+    
+        <div class = "controls">
+            <button id = "startTimer" >Start</button>
+            <button id = "stopTimer" >Stop</button>
+            <button id = "resetTimer" >Reset</button>
+        </div>
+        <div id = "stopwatch">00:00.0</div>
+    </body>
+        <script>
+            var minutes = 00;
+            var seconds = 00;
+            var tenths = 0;
+            var timer;
+            
+            
+            function callTimer() {
+                tenths++;
+                if (tenths < 100) {
+                    if (tenths === 99) {
+                        tenths = 0;
+                        seconds++;
+                        if (seconds === 60)  {
+                            seconds = 0;
+                            minuntes++;
+                        }
+                    }
+                }
+                else{
+                    tenths = 0;
+                }
+                document.getElementById("stopwatch").innerHTML = minutes + ":" + seconds + ":" + tenths;
+            }
+            
+            
+            startTimer.onclick = function(){
+                document.getElementById("startTimer").disabled = true;
+                timer = setInterval(callTimer, 10);
+            }
+            
+            stopTimer.onclick = function stopTimer() {
+                document.getElementById("startTimer").disabled = false;
+                clearInterval(timer);
+            }
+            
+            resetTimer.onclick = function() {
+                minutes = 0;
+                seconds = 0;
+                tenths = 0;
+                document.getElementById("stopwatch").innerHTML = minutes + ":" + seconds + "." + tenths;
+            }        
+                   
+        </script>
+    
+</html>
