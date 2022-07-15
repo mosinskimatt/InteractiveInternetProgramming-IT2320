@@ -1,0 +1,55 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Matthew Mosinski - Lab 7 - Guy Walking</title>
+<style>
+    .container{position: absolute;}
+    
+    .flipped{transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -khtml-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);}
+</style>
+</head>
+<body>
+<h2> Matthew Mosinsk - Lab 7 - Guy Walking</h2>
+<p>
+    <button>Start</button>
+</p>
+<div class = "container">
+    <img src= "guy-walking.gif"
+    id="guyWalking"/>  
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+        width = $(window).width();
+        
+        $("#guyWalking").hide();
+
+        $("button").click(function()
+        {
+            $("#guyWalking").fadeIn(1000)
+            .animate(
+                {marginLeft:width-=400},
+                3000, "linear",function(){      //callback function for extra credit to change class.
+                    $("#guyWalking").removeClass("container").addClass("flipped")
+                });
+            $("#guyWalking").animate(
+                {marginLeft:""},
+                3000, "linear").fadeOut(1000);
+            })
+        });
+            
+            
+            
+            
+    
+        
+    </script>
