@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#submit").click(function(){
+var zipCode = $("#zipCode").val();
+var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zipCode + ",us&appid=38ef4fc0d2c078a68b93c77ce1617023&units=imperial";
+    $.ajax({
+        type:"GET",
+        url:url,
+        dataType:"json"
+    }).done(function(weatherResponse){
+        $("#windSpeed").html(Math.round(weatherResponse.wind.speed));
+        $("#location").html(weatherResponse.name);
+        $("#currentWeather").html(weatherResponse.weather[0].description);
+        $("#temp").html(Math.round(weatherResponse.main.temp));
+        $("#windDirection").html(weatherResponse.wind.deg);
+        $("#humidity").html(weatherResponse.main.humidity);
+        $("#tempL").html(Math.round(weatherResponse.main.temp_min));
+        $("#tempH").html(Math.round(weatherResponse.main.temp_max));
+    })
+
+
+}); 
+
+});
+
+
+</script>
+</head>
+<body>
+Enter a zipcode<input type = "text" id = "zipCode"><br>
+<button id = "submit">Get Weather</button><br><br>
+    <strong>Location:</strong> <label id = "location"></label><br>
+    <strong>Currently:</strong> <label id = "currentWeather"></label><br>
+    <strong>Temp:</strong> <label id = "temp"></label>F<br>
+    <strong>Windspeed:</strong> <label id = "windSpeed"></label>MPH<br>
+    <strong>Direction:</strong> <label id = "windDirection"></label><br>
+    <strong>Humidity:</strong> <label id = "humidity"></label><br>
+    <strong>Low Temp:</strong> <label id = "tempL"></label>F<br>
+    <strong>High Temp:</strong> <label id = "tempH"></label>F<br>
+
+</body>
+</html>
