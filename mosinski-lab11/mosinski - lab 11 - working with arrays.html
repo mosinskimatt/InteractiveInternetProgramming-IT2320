@@ -21,13 +21,11 @@
                 var srchPhrase = $("#search").val();
                 $("#results0").html(string.indexOf(srchPhrase));
                 function find(x){
-                    var message = $.trim($("#dataEntered").val());
-                var string = Array.from(message);
-                var srchPhrase = $("#search").val();
-                    return x = $(string).val();
+                 
+                    return x.indexOf(srchPhrase) !== $("#dataEntered").val();
                     
                 }
-                $("#results1").html(string.findIndex(find));
+                $("#results1").html(string.findIndex(find, srchPhrase));
                 
                 
 
