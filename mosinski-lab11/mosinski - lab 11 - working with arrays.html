@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        //var input={};
+        $(document).ready(function () {
+
+
+            $("#submit").click(function () {
+                var message = $.trim($("#dataEntered").val());
+                var string = Array.from(message);
+                for (i = 0; i < string.length; i++) { }
+                $("#results").html(message);
+
+            });
+
+            $("#find").click(function () {
+                var message = $.trim($("#dataEntered").val());
+                var string = Array.from(message);
+                var srchPhrase = $("#search").val();
+                $("#results0").html(string.indexOf(srchPhrase));
+                function find(x){
+                    var message = $.trim($("#dataEntered").val());
+                var string = Array.from(message);
+                var srchPhrase = $("#search").val();
+                    return x = $(string).val();
+                    
+                }
+                $("#results1").html(string.findIndex(find));
+                
+                
+
+            });
+
+            $("#sort").click(function () {
+                var message = $.trim($("#dataEntered").val());
+                var string = Array.from(message);
+                $("#results2").html(string.sort());
+            });
+
+            $("#reverse").click(function () {
+                var message = $.trim($("#dataEntered").val());
+                var string = Array.from(message).reverse();
+                $("#results3").html(string);
+            });
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <h2>Matthew Mosinski - Lab 11 - Working with Arrays</h2>
+    Enter a string: <input type="text" id="dataEntered">
+    <button type="button" id="submit">Submit</button>
+    <br /><br />
+    Search for this: <input type="text" id="search">
+    <button type="button" id="find">Search</button>
+    <br /><br />
+    <button type="button" id="sort">Sort the Array</button>
+    <button type="button" id="reverse">Reverse the Array</button>
+    <br /><br />
+    <strong>My Array Output</strong><br />
+    Array of the string you entered: <span id="results"></span><br /><br />
+    Index of search phase if found in entered string: <span id="results0"></span><br /><br />
+    Element(s) of search phrase found in original string: <span id="results1"></span><br /><br />
+    Sorted array of entered string: <span id="results2"></span><br /><br />
+    Array displayed in reverse: <span id="results3"></span><br />
+</body>
+
+</html>
