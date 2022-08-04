@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <h1>Matthew Mosinski - lab12 - algorithms</h1>
+  </head>
+
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $("#gcd").click(function() {
+          const firstNum = $("#firstInput").val();
+          const secondNum = $("#secondInput").val();
+          const calcGCD = (firstNum, secondNum) => {
+            let num1 = Math.abs(firstNum);
+            let num2 = Math.abs(secondNum);
+            while (num1 && num2 && num1 !== num2) {
+              if (num1 > num2) {
+                [num1, num2] = [num1 - num2, num2];
+              } else {
+                [num1, num2] = [num1, num2 - num1];
+              };
+            };
+            return num1 || num2;
+          };
+          $("#gcdResult").html(calcGCD(firstNum, secondNum));
+        });
+
+        $("#prime").click(function() {
+        $('#primeNums').html("<br/>1<br/>2");
+          var isPrime;
+          var num = $('#inputNum').val();
+          for (i = 3; i <= num; i += 2) {
+            isPrime = true;
+            for (j = 2; j < i; j++) {
+              if (i % j == 0) {
+                isPrime = false;
+                break;
+              }
+            }
+            if (isPrime == true) {
+              var k = $('#primeNums').html();
+              $('#primeNums').html( k + '<br />' + j);
+            }
+          }
+        });
+      });
+
+    </script>
+
+  </body>
+  <small>Enter the first number</small>
+  <input type="text" id="firstInput">
+
+  <small>Enter the second number</small>
+  <input type="text" id="secondInput">
+
+  <button type="button" id="gcd"> Calculate GCD</button><br><br>
+
+  <small>Enter a number to view all primes up to the number</small>
+  <input type="text" id="inputNum">
+
+  <button type="button" id="prime"> See prime #s</button><br><br>
+
+  The greatest common denominator of your numbers is:
+  <span id="gcdResult"></span><br><br>
+  All of the prime numbers up to your number is:
+  <span id="primeNums"></span>
+
+</html>
