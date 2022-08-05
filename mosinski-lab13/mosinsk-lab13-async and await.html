@@ -1,0 +1,208 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>		  
+var scale = ["C", "D", "E", "F", "G", "A5", "B5", "C5", "C5",  "B5",  "A5",  "G",  "F",  "E",  "D",  "C" ];
+
+
+ function playSong() {
+      audios0 = document.getElementById("C");
+      audios0.play();
+      $("#notes").html(scale[0]);
+
+      audios1 = document.getElementById("D");
+      setTimeout(() => {
+      audios1.play();
+      $("#notes1").html(scale[1])
+    }, 1500);
+
+      audios2 = document.getElementById("E");
+      setTimeout(() => {
+      audios2.play();
+      $("#notes2").html(scale[2])
+    }, 3000);
+
+      audios3 = document.getElementById("F");
+      setTimeout(() => {
+        audios3.play();
+        $("#notes3").html(scale[3])
+    }, 4500);
+
+      audios4 = document.getElementById("G");
+      setTimeout(() => {
+        audios4.play();
+        $("#notes4").html(scale[4])
+    }, 6000);
+
+      audios5 = document.getElementById("A5");
+      setTimeout(() => {
+        audios5.play();
+        $("#notes5").html(scale[5])
+    }, 7500);
+
+      audios6 = document.getElementById("B5");
+      setTimeout(() => {
+        audios6.play();
+        $("#notes6").html(scale[6])
+    }, 9000);
+
+      audios7 = document.getElementById("C5");
+      setTimeout(() => {
+        audios7.play();
+        $("#notes7").html(scale[7])
+    }, 10500);
+
+      audios8 = document.getElementById("C5");
+      setTimeout(() => {
+        audios8.play();
+        $("#notes8").html(scale[8])
+    }, 12000);
+
+      audios9 = document.getElementById("B5");
+      setTimeout(() => {
+        audios9.play();
+        $("#notes9").html(scale[9])
+    }, 13500);
+
+      audios10 = document.getElementById("A5");
+      setTimeout(() => {
+        audios10.play();
+        $("#notes10").html(scale[10])
+    }, 15000);
+
+      audios11 = document.getElementById("G");
+      setTimeout(() => {
+        audios11.play();
+        $("#notes11").html(scale[11])
+    }, 16500);
+
+      audios12 = document.getElementById("F");
+      setTimeout(() => {
+        audios12.play();
+        $("#notes12").html(scale[12])
+    }, 18000);
+
+      audios13 = document.getElementById("E");
+      setTimeout(() => {
+        audios13.play();
+        $("#notes13").html(scale[13])
+    }, 19500);
+
+      audios14 = document.getElementById("D");
+      setTimeout(() => {
+        audios14.play();
+        $("#notes14").html(scale[14])
+    }, 21000);
+
+      audios15 = document.getElementById("C");
+      setTimeout(() => {
+        audios15.play();
+        $("#notes15").html(scale[15])
+    }, 22500);
+}
+</script>
+</head>
+
+<body>
+<h2>Matthew Mosinski - Lab 13 - Async & Await</h2>
+<button type="button" onclick="playSong()">Play</button>
+<p><h1><span id="notes"></span>
+  <span id="notes1"></span>
+  <span id="notes2"></span>
+  <span id="notes3"></span>
+  <span id="notes4"></span>
+  <span id="notes5"></span>
+  <span id="notes6"></span>
+  <span id="notes7"></span>
+  <span id="notes8"></span>
+  <span id="notes9"></span>
+  <span id="notes10"></span>
+  <span id="notes11"></span>
+  <span id="notes12"></span>
+  <span id="notes13"></span>
+  <span id="notes14"></span>
+  <span id="notes15"></span>
+</h1></p>
+
+<!-- from freesounds.org - user: pinkyfinger -->
+<audio id="A">  
+  <source src="sounds/68437__pinkyfinger__piano-a.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="B">
+  <source src="sounds/68438__pinkyfinger__piano-b.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="Bb">
+  <source src="sounds/68439__pinkyfinger__piano-bb.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="C">
+  <source src="sounds/68441__pinkyfinger__piano-c.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="Csharp">
+  <source src="sounds/68440__pinkyfinger__piano-c-sharp.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="D">
+  <source src="sounds/68442__pinkyfinger__piano-d.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="Eb">
+  <source src="sounds/68444__pinkyfinger__piano-eb.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="E">
+  <source src="sounds/68443__pinkyfinger__piano-e.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="F">
+  <source src="sounds/68446__pinkyfinger__piano-f.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="Fsharp">
+  <source src="sounds/68445__pinkyfinger__piano-f-sharp.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="G">
+  <source src="sounds/68448__pinkyfinger__piano-g.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="Gsharp">
+  <source src="sounds/68447__pinkyfinger__piano-g-sharp.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+<audio id="Gsharp5">
+  <source src="sounds/68447__pinkyfinger__piano-g-sharp5.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="A5">  
+  <source src="sounds/68437__pinkyfinger__piano-a5.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="B5">
+  <source src="sounds/68438__pinkyfinger__piano-b5.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="C5">
+  <source src="sounds/68441__pinkyfinger__piano-c5.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+</body>
+</html>
